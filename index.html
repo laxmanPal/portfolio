@@ -8,6 +8,9 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
   </head>
   <body>
+    <!-- Cursor -->
+    <!-- <div class="inner-cursor"></div>
+    <div class="outer-cursor"></div> -->
     <!-- Navigation -->
     <header class="header">
       <div class="header-container">
@@ -22,7 +25,7 @@
             <li class="nav-items"><a href="#" class="nav-links">project</a></li>
             <li class="nav-items"><a href="#" class="nav-links">about</a></li>
             <li class="nav-items"><a href="#" class="nav-links">contact</a></li>
-            <li class="nav-items resume header_btn">
+            <li class="nav-items header_btn">
               <a href="#" class="nav-links">resume</a>
             </li>
           </ul>
@@ -47,17 +50,20 @@
                       </h1>
                     </div>
                   </div>
-                  <div class="header-image-wrapper">
+                  <div class="header-image-wrapper circle-wrapper">
                     <div class="overflow-image">
-                      <img
-                        src="/images/mac.png"
-                        loading="lazy"
-                        sizes="(max-width: 479px) 17vw, (max-width: 767px) 13vw, 92.79166412353516px"
-                        alt=""
-                        class="cover-image"
-                      />
+                      <div class="circle">
+                        <div class="circle-image"></div>
+                        <div class="text">
+                          <p>LAXMAN PAL - LAXMAN PAL - LAXMAN PAL -</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                  <div class="backdrop">
+                    <img src="/images/me.jpeg" alt="" />
+                  </div>
+
                   <div class="overflow-hidden">
                     <h1 class="heading-huge">PAL,</h1>
                   </div>
@@ -88,15 +94,39 @@
               </div>
             </div>
           </div>
-          <a href="#networks" class="hero-link">
+          <div class="hero-link">
             <img
               src="https://moonli.me/wp-content/themes/moonli/images/arrow-down.svg"
               alt="arrow"
             />
-          </a>
+          </div>
+          <!-- <div class="circle-container">
+            <div class="circle">
+              <div class="text">
+                <p>Wellcome Wellcome Wellcome Wellcome Wellcome</p>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>
+    <!-- <section class="section-home-about-me">
+      <div class="elipse-wrapper">
+        <img
+          src="/images/wave.svg"
+          loading="lazy"
+          data-w-id="8c567a19-8958-c603-29e1-86526ab067ef"
+          alt="Assets - Jacob Webflow Template"
+          class="elipse-image"
+          style="
+            will-change: transform;
+            transform: translate3d(0px, 0px, 0px) scale3d(1.4628, 1.4628, 1)
+              rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+            transform-style: preserve-3d;
+          "
+        />
+      </div>
+    </section> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script type="module" src="/main.js"></script>
