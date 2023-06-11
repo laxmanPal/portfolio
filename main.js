@@ -1,7 +1,21 @@
 import "./styles/modern-normalize.css";
 import "./styles/style.css";
 
+import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
 
 let text = document.querySelector(".text p");
 
@@ -48,6 +62,8 @@ text.innerHTML = text.innerHTML
 //     duration: 0.6,
 //   });
 // });
+
+gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline();
@@ -115,10 +131,32 @@ window.addEventListener("DOMContentLoaded", () => {
       delay: 1,
       duration: 1,
       ease: "Power4.out",
-    })
-    .to(".hero-background", {
-      width: "100%",
-      delay: 0.5,
-      duration: 1,
     });
+  // .to(".hero-background", {
+  //   width: "100%",
+  //   delay: 0.5,
+  //   duration: 1,
+  // });
+});
+
+gsap.to(".clip-path", {
+  scrollTrigger: {
+    trigger: ".clip-path-wrapper",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    pin: true,
+  },
+  clipPath: "circle(100% at center center)",
+});
+
+gsap.to(".innertext", {
+  scrollTrigger: {
+    trigger: ".clip-path-wrapper",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+  opacity: 0,
+  ease: "power2.out",
 });
