@@ -17,6 +17,14 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+const burgerMenu = document.querySelector(".burger-menu");
+const navigation = document.querySelector(".navigation");
+
+burgerMenu.addEventListener("click", () => {
+  navigation.classList.toggle("active");
+  burgerMenu.classList.toggle("active");
+});
+
 let text = document.querySelector(".text p");
 
 text.innerHTML = text.innerHTML
