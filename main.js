@@ -25,7 +25,7 @@ burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("active");
 });
 
-let text = document.querySelector(".text p");
+let text = document.querySelector(".preloader-text p");
 
 text.innerHTML = text.innerHTML
   .split("")
@@ -76,75 +76,97 @@ gsap.registerPlugin(ScrollTrigger);
 window.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline();
 
-  tl.from("#first", {
-    onStart: () => {
-      $("#first").textillate({
-        in: {
-          effect: "fadeInUp",
-          callback: () => {
-            $("#first").textillate("out");
-          },
-        },
-        out: { effect: "fadeOutUp" },
-      });
-    },
-  })
-    .from("#second", {
-      opacity: 0,
-      delay: 1.1,
-      onStart: () => {
-        $("#second").textillate({
-          in: {
-            effect: "fadeInUp",
-            callback: () => {
-              $("#second").textillate("out");
-            },
-          },
-          out: { effect: "fadeOutUp" },
-        });
-      },
-    })
-    .from("#third", {
-      opacity: 0,
-      delay: 1.1,
-      onStart: () => {
-        $("#third").textillate({
-          in: {
-            effect: "fadeInUp",
-            callback: () => {
-              $("#third").textillate("out");
-            },
-          },
-          out: { effect: "fadeOutUp" },
-        });
-      },
-    })
-    .from("#fourth", {
-      opacity: 0,
-      delay: 1.1,
-      onStart: () => {
-        $("#fourth").textillate({
-          in: {
-            effect: "fadeInUp",
-            callback: () => {
-              $("#fourth").textillate("out");
-            },
-          },
-          out: { effect: "fadeOutUp" },
-        });
-      },
-    })
-    .to(".preloader-container", {
-      top: "-100%",
-      delay: 1,
-      duration: 1,
-      ease: "Power4.out",
-    });
+  // tl.from("#first", {
+  //   onStart: () => {
+  //     $("#first").textillate({
+  //       in: {
+  //         effect: "fadeInUp",
+  //         callback: () => {
+  //           $("#first").textillate("out");
+  //         },
+  //       },
+  //       out: { effect: "fadeOutUp" },
+  //     });
+  //   },
+  // })
+  //   .from("#second", {
+  //     opacity: 0,
+  //     delay: 1.1,
+  //     onStart: () => {
+  //       $("#second").textillate({
+  //         in: {
+  //           effect: "fadeInUp",
+  //           callback: () => {
+  //             $("#second").textillate("out");
+  //           },
+  //         },
+  //         out: { effect: "fadeOutUp" },
+  //       });
+  //     },
+  //   })
+  //   .from("#third", {
+  //     opacity: 0,
+  //     delay: 1.1,
+  //     onStart: () => {
+  //       $("#third").textillate({
+  //         in: {
+  //           effect: "fadeInUp",
+  //           callback: () => {
+  //             $("#third").textillate("out");
+  //           },
+  //         },
+  //         out: { effect: "fadeOutUp" },
+  //       });
+  //     },
+  //   })
+  //   .from("#fourth", {
+  //     opacity: 0,
+  //     delay: 1.1,
+  //     onStart: () => {
+  //       $("#fourth").textillate({
+  //         in: {
+  //           effect: "fadeInUp",
+  //           callback: () => {
+  //             $("#fourth").textillate("out");
+  //           },
+  //         },
+  //         out: { effect: "fadeOutUp" },
+  //       });
+  //     },
+  //   })
+  //   .to(".preloader-container", {
+  //     top: "-100%",
+  //     delay: 1,
+  //     duration: 1,
+  //     ease: "Power4.out",
+  //   });
   // .to(".hero-background", {
   //   width: "100%",
   //   delay: 0.5,
   //   duration: 1,
   // });
+
+  tl.from(".preloader-circle-image", {
+    width: 0,
+    height: 0,
+    duration: 1,
+  })
+    .to(".preloader-text", {
+      opacity: 0,
+      duration: 1,
+      // delay: 1,
+    })
+    .to(".preloader-circle-image", {
+      width: "100%",
+      opacity: 0,
+      duration: 1,
+    })
+    .to(".preloader-container", {
+      top: "-150%",
+      delay: 0.5,
+      duration: 1,
+      ease: "Power4.out",
+    });
 });
 
 gsap.to(".clip-path", {
@@ -156,6 +178,7 @@ gsap.to(".clip-path", {
     pin: true,
   },
   clipPath: "circle(100% at center center)",
+  ease: "power2.out",
 });
 
 gsap.to(".innertext", {

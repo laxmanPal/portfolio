@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Michroma&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
@@ -76,42 +76,60 @@ img {
   background-color: #101118;
   color: #f0f2f5;
   z-index: 999;
-}
-
-.preloader-container > h1 {
-  position: absolute;
-  font-size: 120px;
-  color: #f0f2f5;
-  font-family: "Oswald", sans-serif;
-  right: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-.preloader-container > h1#first {
-  bottom: 5%;
+.preloader-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  /* background-color: #000; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* background-color: #acff4c; */
 }
 
-.preloader-container > h1#second {
-  bottom: 30%;
+.preloader-circle-image {
+  /* position: absolute; */
+  width: 50%;
+  height: 50%;
+  /* background-color: #acff4c; */
+  /* background-image: url(/images/logo-black.png);
+  background-size: cover; */
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.preloader-container > h1#third {
-  bottom: 50%;
-}
-
-.preloader-container > h1#fourth {
-  top: 5%;
-}
-
-.preloader-container > h3 {
-  color: #f0f2f5;
-  font-family: "Poppins", sans-serif;
+.preloader-circle .preloader-text {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 11%;
-  font-size: 28px;
-  /* letter-spacing: 3px; */
-  font-weight: 300;
-  left: 6%;
+  animation: text-wheel 10s infinite linear;
+  color: #ffffff;
+}
+
+@keyframes text-wheel {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.preloader-circle .preloader-text span {
+  position: absolute;
+  left: 50%;
+  font-size: 15px;
+  transform-origin: 0 99px;
 }
 
 /************** Cursor *******************/
@@ -192,6 +210,19 @@ img {
   padding: 0 2.5rem;
   font-size: 1rem;
   letter-spacing: -0.01em;
+}
+
+.nav-items::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-items:hover::after {
+  width: 100%;
 }
 
 .nav-links {
@@ -358,74 +389,15 @@ img {
   transition: background 0.5s ease;
 }
 
-.header-image-wrapper.circle-wrapper {
-  width: 150px;
-  height: 150px;
-}
-
-.circle {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* background-color: #000; */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .circle-image {
-  position: absolute;
-  width: 80%;
-  height: 80%;
-  background-image: url(/images/me.jpeg);
-  background-size: cover;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 
-.circle .text {
+.fit-cover-image {
   width: 100%;
   height: 100%;
-  position: absolute;
-  animation: text-wheel 10s infinite linear;
-  color: #101118;
-}
-
-.backdrop {
-  width: 0%;
-  height: 0;
-  position: fixed;
-  top: 0;
-  background-color: #14141469;
-  display: none;
-  z-index: 101;
-}
-
-.backdrop img {
-  width: 500px;
-}
-
-/* .backdrop.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-} */
-
-@keyframes text-wheel {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.circle .text span {
-  position: absolute;
-  left: 50%;
-  font-size: 10px;
-  transform-origin: 0 75px;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 /* Wave */
@@ -735,8 +707,7 @@ img {
     font-size: 3rem;
   }
 
-  .header-image-wrapper.circle-wrapper {
-    top: -3px;
+  .header-image-wrapper {
     width: 2.5rem;
     height: 2.5rem;
   }
