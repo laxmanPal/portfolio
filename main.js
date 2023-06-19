@@ -4,6 +4,10 @@ import "./styles/style.css";
 import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+const tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis({
   duration: 1.5,
@@ -71,11 +75,7 @@ text.innerHTML = text.innerHTML
 //   });
 // });
 
-gsap.registerPlugin(ScrollTrigger);
-
 window.addEventListener("DOMContentLoaded", () => {
-  const tl = gsap.timeline();
-
   // tl.from("#first", {
   //   onStart: () => {
   //     $("#first").textillate({
@@ -190,4 +190,18 @@ gsap.to(".innertext", {
   },
   opacity: 0,
   ease: "power2.out",
+});
+
+const aboutPara = new SplitType(".about-para", { types: "words" });
+
+gsap.to(".word", {
+  scrollTrigger: {
+    trigger: ".about-me",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    pin: true,
+  },
+  stagger: 2,
+  opacity: 1,
 });
