@@ -10,7 +10,7 @@ const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis({
-  duration: 1.5,
+  duration: 1,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 });
 
@@ -38,114 +38,7 @@ text.innerHTML = text.innerHTML
   })
   .join("");
 
-// let circleImg = document.querySelector(".circle-wrapper");
-// let backdrop = document.querySelector(".backdrop");
-
-// circleImg.addEventListener("click", () => {
-//   // backdrop.classList.toggle("active");
-
-//   gsap.to(backdrop, {
-//     width: "100%",
-//     height: "100vh",
-//     display: "flex",
-//     alignItem: "center",
-//     justifyContent: "center",
-//     duration: 0.6,
-//   });
-// });
-
-// backdrop.addEventListener("click", () => {
-//   backdrop.classList.remove("active");
-// });
-
-// circleImg.addEventListener("click", () => {
-//   gsap.to([".header ,.heading-huge "], {
-//     display: "none",
-//     duration: 0.6,
-//   });
-
-//   gsap.to(circleImg, {
-//     width: "100%",
-//     height: "100vh",
-//     display: "flex",
-//     alignItem: "center",
-//     justifyContent: "center",
-//     delay: 0.5,
-//     duration: 0.6,
-//   });
-// });
-
 window.addEventListener("DOMContentLoaded", () => {
-  // tl.from("#first", {
-  //   onStart: () => {
-  //     $("#first").textillate({
-  //       in: {
-  //         effect: "fadeInUp",
-  //         callback: () => {
-  //           $("#first").textillate("out");
-  //         },
-  //       },
-  //       out: { effect: "fadeOutUp" },
-  //     });
-  //   },
-  // })
-  //   .from("#second", {
-  //     opacity: 0,
-  //     delay: 1.1,
-  //     onStart: () => {
-  //       $("#second").textillate({
-  //         in: {
-  //           effect: "fadeInUp",
-  //           callback: () => {
-  //             $("#second").textillate("out");
-  //           },
-  //         },
-  //         out: { effect: "fadeOutUp" },
-  //       });
-  //     },
-  //   })
-  //   .from("#third", {
-  //     opacity: 0,
-  //     delay: 1.1,
-  //     onStart: () => {
-  //       $("#third").textillate({
-  //         in: {
-  //           effect: "fadeInUp",
-  //           callback: () => {
-  //             $("#third").textillate("out");
-  //           },
-  //         },
-  //         out: { effect: "fadeOutUp" },
-  //       });
-  //     },
-  //   })
-  //   .from("#fourth", {
-  //     opacity: 0,
-  //     delay: 1.1,
-  //     onStart: () => {
-  //       $("#fourth").textillate({
-  //         in: {
-  //           effect: "fadeInUp",
-  //           callback: () => {
-  //             $("#fourth").textillate("out");
-  //           },
-  //         },
-  //         out: { effect: "fadeOutUp" },
-  //       });
-  //     },
-  //   })
-  //   .to(".preloader-container", {
-  //     top: "-100%",
-  //     delay: 1,
-  //     duration: 1,
-  //     ease: "Power4.out",
-  //   });
-  // .to(".hero-background", {
-  //   width: "100%",
-  //   delay: 0.5,
-  //   duration: 1,
-  // });
-
   tl.from(".preloader-circle-image", {
     width: 0,
     height: 0,
@@ -192,16 +85,16 @@ gsap.to(".innertext", {
   ease: "power2.out",
 });
 
-const aboutPara = new SplitType(".about-para", { types: "words" });
+// const aboutPara = new SplitType(".about-para", { types: "words" });
 
-gsap.to(".word", {
-  scrollTrigger: {
-    trigger: ".about-me",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-    pin: true,
-  },
-  stagger: 2,
-  opacity: 1,
-});
+// gsap.to(".word", {
+//   scrollTrigger: {
+//     trigger: ".about-me",
+//     start: "top top",
+//     end: "bottom top",
+//     scrub: true,
+//     pin: true,
+//   },
+//   stagger: 2,
+//   opacity: 1,
+// });
