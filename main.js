@@ -9,17 +9,17 @@ import SplitType from "split-type";
 const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
-const lenis = new Lenis({
-  duration: 1,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-});
+// const lenis = new Lenis({
+//   duration: 1,
+//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+// });
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
 
-requestAnimationFrame(raf);
+// requestAnimationFrame(raf);
 
 const burgerMenu = document.querySelector(".burger-menu");
 const navigation = document.querySelector(".navigation");
@@ -47,7 +47,6 @@ window.addEventListener("DOMContentLoaded", () => {
     .to(".preloader-text", {
       opacity: 0,
       duration: 1,
-      // delay: 1,
     })
     .to(".preloader-circle-image", {
       width: "100%",
@@ -85,16 +84,27 @@ gsap.to(".innertext", {
   ease: "power2.out",
 });
 
-// const aboutPara = new SplitType(".about-para", { types: "words" });
+gsap.from(".internet_img", {
+  scrollTrigger: {
+    trigger: ".skills",
+    start: "top 20%",
+  },
+  scale: 0,
+  opacity: 0,
+  delay: 0.5,
+  duration: 1,
+  ease: "power2.out",
+});
 
-// gsap.to(".word", {
-//   scrollTrigger: {
-//     trigger: ".about-me",
-//     start: "top top",
-//     end: "bottom top",
-//     scrub: true,
-//     pin: true,
-//   },
-//   stagger: 2,
-//   opacity: 1,
-// });
+gsap.from(".frontend , .databases , .others , .backend", {
+  scrollTrigger: {
+    trigger: ".skills",
+    start: "top 20%",
+  },
+  scale: 0,
+  opacity: 0,
+  delay: 1,
+  duration: 1,
+  stagger: 0.09,
+  ease: "power2.out",
+});
