@@ -6,7 +6,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-const tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 
 // const lenis = new Lenis({
@@ -39,6 +38,8 @@ text.innerHTML = text.innerHTML
   .join("");
 
 window.addEventListener("DOMContentLoaded", () => {
+  const tl = gsap.timeline();
+
   tl.from(".preloader-circle-image", {
     width: 0,
     height: 0,
@@ -108,3 +109,26 @@ gsap.from(".frontend , .databases , .others , .backend", {
   stagger: 0.09,
   ease: "power2.out",
 });
+
+// const rows = document.querySelectorAll(".cb-tagreel-row");
+
+// rows.forEach(function (e, i) {
+//   let row_width = e.getBoundingClientRect().width;
+//   let row_item_width = e.children[0].getBoundingClientRect().width;
+//   let initial_offset = ((2 * row_item_width) / row_width) * 100 * -1;
+
+//   gsap.set(e, {
+//     xPercent: `${initial_offset}`,
+//   });
+
+//   let duration = 5 * (i + 1);
+
+//   var tl = gsap.timeline();
+
+//   tl.to(e, {
+//     ease: "none",
+//     duration: duration,
+//     xPercent: 0,
+//     repeat: -1,
+//   });
+// });
