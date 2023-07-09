@@ -180,7 +180,7 @@ img {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url(https://www.ada.cx/hubfs/raw_assets/public/2023/images/hero-line-bg.svg);
+  /* background-image: url(https://www.ada.cx/hubfs/raw_assets/public/2023/images/hero-line-bg.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -303,6 +303,66 @@ img {
   justify-content: center;
 }
 
+.hero-marquee {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-marquee.top {
+  position: absolute;
+  top: 0;
+}
+
+.hero-marquee.bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.hero-marquee.bottom .hero-marquee-wrapper {
+  /* animation-direction: reverse;
+  animation-delay: -1; */
+  animation: marqueeAnimationBottom 38s linear 0s infinite running;
+}
+
+.hero-marquee.bottom .hero-marquee-title {
+  margin-left: 20px;
+  float: right;
+}
+
+.hero-marquee-wrapper {
+  width: 100000px;
+  animation: marqueeAnimation 38s linear 0s infinite running;
+}
+
+.hero-marquee-title {
+  margin-right: 20px;
+  float: left;
+  font-size: 3rem;
+  color: #000;
+}
+
+.text-stroke {
+  color: transparent;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: #000000;
+}
+
+@keyframes marqueeAnimation {
+  100% {
+    transform: translateX(-5000px);
+  }
+}
+
+@keyframes marqueeAnimationBottom {
+  100% {
+    transform: translateX(5000px);
+  }
+}
+
 .wrapper {
   width: 100%;
   max-width: 1300px;
@@ -370,7 +430,8 @@ img {
 }
 
 .heading-huge {
-  font-size: 6.8rem;
+  font-size: 6rem;
+  text-transform: uppercase;
 }
 
 /*   */
@@ -435,17 +496,17 @@ img {
 
 /* Magic */
 
-.marquee {
+/* .marquee {
   width: 100%;
-  padding: 5rem 2rem;
-  /* border-top: 1px solid #f0f2f5;
+  padding: 5rem 2rem; */
+/* border-top: 1px solid #f0f2f5;
   border-bottom: 1px solid #f0f2f5; */
-  background-color: #101118;
+/* background-color: #101118;
   text-align: center;
   overflow: hidden;
-}
+} */
 
-.marquee h3 {
+/* .marquee h3 {
   font-size: 8rem;
   color: #f0efef;
   text-transform: uppercase;
@@ -471,7 +532,7 @@ img {
   100% {
     transform: translateX(-5000px);
   }
-}
+} */
 
 /* Clip Path */
 
@@ -816,7 +877,7 @@ img {
   }
 
   .heading-huge {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 
   .header-image-wrapper {
