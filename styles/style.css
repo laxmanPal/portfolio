@@ -295,7 +295,7 @@ img {
 
 #hero {
   position: relative;
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   width: 100%;
   height: calc(90vh - 150px);
   display: flex;
@@ -303,63 +303,65 @@ img {
   justify-content: center;
 }
 
-.hero-marquee {
-  width: 100%;
-  padding: 1rem 2rem;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  text-align: center;
-  overflow: hidden;
-}
-
-.hero-marquee.top {
+#top {
   position: absolute;
   top: 0;
 }
 
-.hero-marquee.bottom {
+#bottom {
   position: absolute;
   bottom: 0;
 }
 
-.hero-marquee.bottom .hero-marquee-wrapper {
-  /* animation-direction: reverse;
-  animation-delay: -1; */
-  animation: marqueeAnimationBottom 38s linear 0s infinite running;
+.text-slider {
+  padding: 1rem 0;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
 }
 
-.hero-marquee.bottom .hero-marquee-title {
-  margin-left: 20px;
-  float: right;
+.slider-text-container.top {
+  display: flex;
+  animation: 35s slideLeft infinite linear;
 }
 
-.hero-marquee-wrapper {
-  width: 100000px;
-  animation: marqueeAnimation 38s linear 0s infinite running;
+.slider-text-container.bottom {
+  display: flex;
+  animation: 35s slideRight infinite linear;
 }
 
-.hero-marquee-title {
-  margin-right: 20px;
-  float: left;
+.slider-text {
+  font-size: 3rem;
+  margin: 0 20px;
+  white-space: nowrap;
   font-size: 3rem;
   color: #000;
+  font-family: "Michroma", sans-serif;
 }
 
-.text-stroke {
+.slider-stroke {
   color: transparent;
   -webkit-text-stroke: 2px;
   -webkit-text-stroke-color: #000000;
 }
 
-@keyframes marqueeAnimation {
-  100% {
-    transform: translateX(-5000px);
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
-@keyframes marqueeAnimationBottom {
-  100% {
-    transform: translateX(5000px);
+@keyframes slideRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }
 
@@ -895,13 +897,18 @@ img {
     display: none;
   }
 
-  .marquee h3 {
-    font-size: 3rem;
+  #top {
+    position: absolute;
+    top: 40px;
   }
 
-  .text-stroke {
+  .slider-text {
+    font-size: 1.5rem;
+  }
+
+  .slider-stroke {
     -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: #f0efef;
+    -webkit-text-stroke-color: #000000;
   }
 
   .about-me .container {
