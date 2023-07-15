@@ -1133,6 +1133,10 @@ img {
   height: 60px;
 }
 
+.tech-container h6 {
+  font-size: 1rem;
+}
+
 .experience .container h2 {
   font-size: 2rem;
 }
