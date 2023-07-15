@@ -664,7 +664,7 @@ img {
   position: relative;
   /* background-color: #f0f2f5; */
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .skills .container {
@@ -675,8 +675,40 @@ img {
 }
 
 .skills .container h2 {
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   margin-bottom: 5rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+
+.main-tech-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 5rem;
+  align-items: baseline;
+}
+
+.tech-container {
+  /* border: 1px solid #000; */
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.techImg {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.tech-container h6 {
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin-top: 1rem;
 }
 
 /* .tech_list {
@@ -702,13 +734,8 @@ img {
 .tech img {
   max-width: 60%;
 } */
-
+/* 
 .main_tech_container {
-  /* width: 100%;
-  height: 100%; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
   position: relative;
 }
 
@@ -792,6 +819,116 @@ img {
   border: 4px dashed #d1d1d1;
   border-radius: 50%;
   padding: 10px;
+} */
+
+/* Experience Section */
+
+.experience {
+  position: relative;
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.experience .container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.experience .container h2 {
+  margin-bottom: 5rem;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+
+.main_exp_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ctech_exp {
+  display: flex;
+}
+
+.line_container {
+  width: 10%;
+  /* height: 100vh; */
+  /* background: #000; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line_container .upper_line {
+  width: 3px;
+  height: 100px;
+  background: #000;
+}
+
+.stop {
+  width: 100px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stop svg {
+  width: 50px;
+}
+
+.line_container .lower_line {
+  width: 3px;
+  height: 150px;
+  background: #000;
+}
+
+.exp_content_body {
+  width: 45%;
+  /* height: 100vh; */
+  position: relative;
+}
+
+.exp_content_body .exp_content {
+  position: absolute;
+  /* background: #f1f1f1; */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.first_exp {
+  top: 120px;
+  right: 0;
+  text-align: right;
+}
+
+.second_exp {
+  top: 320px;
+  /* right: 0; */
+}
+
+/* .exp_content_body .exp_content::after{
+  contain: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: red;
+  top: 120px;
+} */
+
+.designation {
+  font-size: 2rem;
+}
+
+.org_name {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.exp_duration {
+  font-size: 1rem;
+  color: #8b8b8b;
 }
 
 /* Responsive */
@@ -984,74 +1121,49 @@ img {
 
   .skills .container h2 {
     margin-bottom: 2rem;
+    font-size: 2rem;
   }
 
-  .internet {
-    display: none;
-  }
-
-  .tech_row .left,
-  .tech_row .right {
-    width: 100%;
-  }
-
-  .frontend,
-  .databases {
-    margin: 0;
-  }
-
-  .backend,
-  .others {
-    margin: 0;
-  }
-
-  .frontend,
-  .backend,
-  .databases,
-  .others {
-    margin-bottom: 20px;
-    text-align: justify;
-  }
+  .main-tech-container {
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* .cb-tagreel {
-  position: relative;
+.techImg {
+  width: 60px;
+  height: 60px;
 }
 
-.cb-tagreel-content {
-  padding: 200px 0;
+.experience .container h2 {
+  font-size: 2rem;
 }
 
-.cb-tagreel-items {
-  margin: -58px 0;
-  overflow: hidden;
-  cursor: default;
+.stop {
+  margin: 10px 0;
 }
 
-.cb-tagreel-row {
-  display: flex;
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
+.stop svg {
+  width: 30px;
 }
 
-.cb-tagreel-item {
-  position: relative;
-  line-height: 100%;
-  font-size: 3.75vw;
-  flex: 0 0 33%;
-  padding: 58px 0;
-  text-transform: uppercase;
+.first_exp {
+  top: 90px;
 }
 
-.cb-tagreel-item.-stroke {
-  color: transparent;
-  text-shadow: none;
-  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+.designation {
+  font-size: 1.5rem;
 }
 
-.cb-tagreel-item span {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-} */
+.org_name {
+  font-size: 1rem;
+  color: #555;
+}
+
+.exp_duration {
+  font-size: 12px;
+}
+
+.second_exp {
+  top: 295px;
+}
+
+}

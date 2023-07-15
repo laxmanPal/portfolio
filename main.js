@@ -8,17 +8,17 @@ import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// const lenis = new Lenis({
-//   duration: 1,
-//   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-// });
+const lenis = new Lenis({
+  duration: 1,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
 
-// function raf(time) {
-//   lenis.raf(time);
-//   requestAnimationFrame(raf);
-// }
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
 
-// requestAnimationFrame(raf);
+requestAnimationFrame(raf);
 
 const burgerMenu = document.querySelector(".burger-menu");
 const navigation = document.querySelector(".navigation");
@@ -85,22 +85,35 @@ gsap.to(".innertext", {
   ease: "power2.out",
 });
 
-gsap.from(".internet_img", {
-  scrollTrigger: {
-    trigger: ".skills",
-    start: "top 20%",
-  },
-  scale: 0,
-  opacity: 0,
-  delay: 0.5,
-  duration: 1,
-  ease: "power2.out",
-});
+// gsap.from(".internet_img", {
+//   scrollTrigger: {
+//     trigger: ".skills",
+//     start: "top 20%",
+//   },
+//   scale: 0,
+//   opacity: 0,
+//   delay: 0.5,
+//   duration: 1,
+//   ease: "power2.out",
+// });
 
-gsap.from(".frontend , .databases , .others , .backend", {
+// gsap.from(".frontend , .databases , .others , .backend", {
+//   scrollTrigger: {
+//     trigger: ".skills",
+//     start: "top 20%",
+//   },
+//   scale: 0,
+//   opacity: 0,
+//   delay: 1,
+//   duration: 1,
+//   stagger: 0.09,
+//   ease: "power2.out",
+// });
+
+gsap.from(".tech-container", {
   scrollTrigger: {
     trigger: ".skills",
-    start: "top 20%",
+    start: "top 50%",
   },
   scale: 0,
   opacity: 0,
@@ -109,26 +122,3 @@ gsap.from(".frontend , .databases , .others , .backend", {
   stagger: 0.09,
   ease: "power2.out",
 });
-
-// const rows = document.querySelectorAll(".cb-tagreel-row");
-
-// rows.forEach(function (e, i) {
-//   let row_width = e.getBoundingClientRect().width;
-//   let row_item_width = e.children[0].getBoundingClientRect().width;
-//   let initial_offset = ((2 * row_item_width) / row_width) * 100 * -1;
-
-//   gsap.set(e, {
-//     xPercent: `${initial_offset}`,
-//   });
-
-//   let duration = 5 * (i + 1);
-
-//   var tl = gsap.timeline();
-
-//   tl.to(e, {
-//     ease: "none",
-//     duration: duration,
-//     xPercent: 0,
-//     repeat: -1,
-//   });
-// });
