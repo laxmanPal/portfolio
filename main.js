@@ -122,3 +122,33 @@ gsap.from(".tech-container", {
   stagger: 0.09,
   ease: "power2.out",
 });
+
+// Achievements
+
+const achievements_heading = document.getElementById("achievements_heading");
+const certificate = document.getElementById("cert_img");
+const achievements = document.querySelectorAll(".achievements_container li");
+
+const achievements_container = document.querySelector(
+  ".achievements_container"
+);
+
+achievements.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    const imageUrl = item.getAttribute("data-image");
+
+    gsap.to(achievements_heading, {
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => {
+        certificate.src = imageUrl;
+        gsap.to(achievements_heading, { opacity: 1, duration: 0.3 });
+      },
+    });
+  });
+});
+
+achievements_container.addEventListener("mouseleave", () => {
+  gsap.to(achievements_heading, { opacity: 1, duration: 0.3 });
+  certificate.src = "";
+});
