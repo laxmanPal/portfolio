@@ -701,6 +701,8 @@ img {
   gap: 20px;
   margin-top: 5rem;
   align-items: baseline;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .tech-container {
@@ -1059,6 +1061,7 @@ img {
 .project_container {
   display: flex;
   align-items: center;
+  margin-bottom: 4rem;
 }
 
 .project_image_container,
@@ -1070,6 +1073,26 @@ img {
 .project_image_container img {
   width: 100%;
   border-radius: 20px;
+}
+
+/* .project_content.text-align-right {
+  text-align: right;
+} */
+
+.project_content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  /* text-transform: uppercase; */
+}
+
+.project_content ul {
+  padding: 0 1.5rem;
+}
+
+.project_content li {
+  list-style: disc;
+  font-size: 1.1rem;
 }
 
 /* Responsive */
