@@ -630,7 +630,7 @@ img {
 .about-me .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 130px 0 20px 0;
+  padding: 100px 0;
 }
 
 .about-me .container .row {
@@ -676,29 +676,45 @@ img {
 .skills {
   position: relative;
   /* background-color: #f0f2f5; */
-  width: 100%;
+  /* width: 100%; */
   /* height: 100vh; */
+  background: #101118;
+  margin: 100px 0;
+}
+
+.skills .wave-top,
+.skills .wave-bottom {
+  position: absolute;
+}
+
+.skills .wave-top {
+  bottom: 100%;
+}
+
+.skills .wave-bottom {
+  transform: rotate(180deg);
+  top: 99%;
 }
 
 .skills .container {
   max-width: 1300px;
   margin: 0 auto;
-  /* padding: 130px 0; */
+  padding: 100px 0;
   height: 100%;
 }
 
 .skills .container h2 {
-  /* text-transform: uppercase; */
   margin-bottom: 5rem;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-size: 3rem;
+  color: #f0f2f5;
 }
 
 .main-tech-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
   margin-top: 5rem;
   align-items: baseline;
   max-width: 1000px;
@@ -706,24 +722,24 @@ img {
 }
 
 .tech-container {
-  /* border: 1px solid #000; */
   margin: 0 auto;
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .techImg {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
   margin: 0 auto;
 }
 
 .tech-container h6 {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 1rem;
+  color: #fff;
 }
 
 /* .tech_list {
@@ -847,6 +863,7 @@ img {
 .experience .container {
   max-width: 1300px;
   margin: 0 auto;
+  padding: 100px 0;
 }
 
 .experience .container h2 {
@@ -1106,6 +1123,7 @@ footer {
 footer .container {
   max-width: 1300px;
   margin: 0 auto;
+  padding-top: 4rem;
 }
 
 footer .content {
@@ -1120,10 +1138,14 @@ footer .form_container {
 }
 
 footer .info {
-  background-image: url("images/circle.svg");
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: contain;
+  position: relative;
+}
+
+.info .circle {
+  width: 300px;
+  position: absolute;
+  top: -3rem;
+  left: -5rem;
 }
 
 footer .info h1 {
@@ -1133,14 +1155,35 @@ footer .info h1 {
   text-transform: uppercase;
 }
 
-.contact_info {
+.contact_details {
+  display: flex;
   margin-top: 2rem;
+  gap: 2rem;
 }
+
+.contact_details h6 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* .contact_info {
+  margin-top: 2rem;
+} */
 
 .contact_info a {
   display: block;
-  color: #fff;
+  color: #b0b0b0;
   font-size: 1rem;
+  font-weight: 300;
+}
+
+.social a {
+  /* display: block; */
+  color: #b0b0b0;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-left: 10px;
 }
 
 .form_container input,
@@ -1157,26 +1200,27 @@ footer .info h1 {
   margin: 10px;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  color: #2b2f3a;
+  color: #ced4da;
   font-weight: 300;
   text-transform: uppercase;
   background: none;
 }
 
 .form_container form button {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 30px;
   /* background-color: #ffffff; */
   color: #ffffff;
-  padding: 10px;
-  border-radius: 30px;
+  /* padding: 10px; */
+  border-radius: 20px;
   margin-top: 30px;
   font-family: "Poppins", sans-serif;
   transition: 0.5s;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border: 0.5px solid #fff;
   transition: 0.5s ease;
+  float: right;
 }
 
 .form_container form button:hover {
