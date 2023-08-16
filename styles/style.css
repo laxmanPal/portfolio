@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Michroma&family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Michroma&family=Oswald:wght@200;300;400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -291,7 +291,7 @@ img {
 }
 
 .nav-links {
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
   text-transform: uppercase;
 }
 
@@ -667,8 +667,9 @@ img {
 
 .about_right p {
   margin-bottom: 1.5rem;
-  color: #555;
-  font-size: 18px;
+  color: #6c757d;
+  font-size: 1.125rem;
+  font-family: "Manrope", sans-serif;
 }
 
 /* Skills */
@@ -706,7 +707,9 @@ img {
 .skills .container h2 {
   margin-bottom: 5rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
   font-size: 3rem;
   color: #f0f2f5;
 }
@@ -736,7 +739,7 @@ img {
 
 .tech-container h6 {
   font-size: 0.8rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 300;
   margin-top: 1rem;
   color: #fff;
@@ -869,7 +872,9 @@ img {
 .experience .container h2 {
   margin-bottom: 5rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
   font-size: 3rem;
 }
 
@@ -959,15 +964,15 @@ img {
 .vertical-timeline-element-content h3 {
   font-size: 24px;
   font-weight: 700;
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 
 .vertical-timeline-element-content p {
   margin: 1em 0 0;
   line-height: 1.6;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(153 153 161 / var(--tw-text-opacity));
@@ -1016,7 +1021,9 @@ img {
 .certificate_container h2 {
   color: #fff;
   font-size: 3.5rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 #cert_img {
@@ -1046,6 +1053,8 @@ img {
 .achievements_container li h3 {
   font-size: 2rem;
   transition: 0.5s ease;
+  font-family: "Manrope", sans-serif;
+  /* font-weight: 500; */
 }
 
 .achievements_container li:hover h3 {
@@ -1068,7 +1077,9 @@ img {
 .projects .section-heading {
   font-size: 3rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .projects_container {
@@ -1097,10 +1108,10 @@ img {
 } */
 
 .project_content h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
-  font-family: "Poppins", sans-serif;
-  /* text-transform: uppercase; */
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
 }
 
 .project_content ul {
@@ -1109,7 +1120,9 @@ img {
 
 .project_content li {
   list-style: disc;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: "Manrope", sans-serif;
+  color: #6c757d;
 }
 
 /* Footer */
@@ -1165,6 +1178,9 @@ footer .info h1 {
   color: #fff;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 /* .contact_info {
@@ -1198,10 +1214,10 @@ footer .info h1 {
   border-bottom: 0.5px solid #ced4da;
   padding: 10px;
   margin: 10px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 1rem;
   color: #ced4da;
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   background: none;
 }
@@ -1214,7 +1230,6 @@ footer .info h1 {
   /* padding: 10px; */
   border-radius: 20px;
   margin-top: 30px;
-  font-family: "Poppins", sans-serif;
   transition: 0.5s;
   border: none;
   font-size: 1.2rem;
