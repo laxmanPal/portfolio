@@ -28,38 +28,38 @@ burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("active");
 });
 
-let text = document.querySelector(".preloader-text p");
+// let text = document.querySelector(".preloader-text p");
 
-text.innerHTML = text.innerHTML
-  .split("")
-  .map((char, i) => {
-    return `<span style="transform:rotate(${i * 9}deg)">${char}</span>`;
-  })
-  .join("");
+// text.innerHTML = text.innerHTML
+//   .split("")
+//   .map((char, i) => {
+//     return `<span style="transform:rotate(${i * 9}deg)">${char}</span>`;
+//   })
+//   .join("");
+
+let intro = document.querySelector(".intro");
+let logo = document.querySelector(".logo-header");
+let logoSpan = document.querySelectorAll(".intro-logo");
 
 window.addEventListener("DOMContentLoaded", () => {
-  const tl = gsap.timeline();
-
-  tl.from(".preloader-circle-image", {
-    width: 0,
-    height: 0,
-    duration: 1,
-  })
-    .to(".preloader-text", {
-      opacity: 0,
-      duration: 1,
-    })
-    .to(".preloader-circle-image", {
-      width: "100%",
-      opacity: 0,
-      duration: 1,
-    })
-    .to(".preloader-container", {
-      top: "-150%",
-      delay: 0.5,
-      duration: 1,
-      ease: "Power4.out",
+  setTimeout(() => {
+    logoSpan.forEach((span, idx) => {
+      setTimeout(() => {
+        span.classList.add("active");
+      }, (idx + 1) * 400);
     });
+    setTimeout(() => {
+      logoSpan.forEach((span, idx) => {
+        setTimeout(() => {
+          span.classList.remove("active");
+          span.classList.add("fade");
+        }, (idx + 1) * 50);
+      });
+    }, 2000);
+    setTimeout(() => {
+      intro.style.top = "-100vh";
+    }, 2300);
+  });
 });
 
 gsap.to(".clip-path", {

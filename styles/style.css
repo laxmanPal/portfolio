@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   line-height: calc(1em + 0.5rem);
-  user-select: none;
+  /* user-select: none; */
 }
 
 html {
@@ -82,67 +82,46 @@ img {
 
 /* Preloader */
 
-.preloader-container {
+.intro {
   position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
   background-color: #101118;
-  color: #f0f2f5;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  transition: 1s;
 }
 
-.preloader-circle {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  /* background-color: #000; */
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  /* background-color: #acff4c; */
-}
-
-.preloader-circle-image {
-  /* position: absolute; */
-  width: 50%;
-  height: 50%;
-  /* background-color: #acff4c; */
-  /* background-image: url(/images/logo-black.png);
-  background-size: cover; */
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.preloader-circle .preloader-text {
-  width: 100%;
-  height: 100%;
+.logo-header {
   position: absolute;
-  animation: text-wheel 10s infinite linear;
-  color: #ffffff;
-}
-
-@keyframes text-wheel {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.preloader-circle .preloader-text span {
-  position: absolute;
+  top: 50%;
   left: 50%;
-  font-size: 15px;
-  transform-origin: 0 99px;
+  transform: translate(-50%, -50%);
+  color: aliceblue;
+}
+
+.intro-logo {
+  position: relative;
+  display: inline-block;
+  bottom: -20px;
+  opacity: 0;
+  text-transform: uppercase;
+  font-family: "Michroma", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.intro-logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.intro-logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
 }
 
 /************** Cursor *******************/
