@@ -159,7 +159,7 @@ gsap.from(".main_exp_container", {
 
 // Achievements
 
-gsap.from(".achievements_heading", {
+gsap.from("#achievements_heading", {
   scrollTrigger: {
     trigger: "#achievements",
     start: "top 50%",
