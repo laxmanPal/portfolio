@@ -22,36 +22,22 @@ requestAnimationFrame(raf);
 
 const burgerMenu = document.querySelector(".burger-menu");
 const navigation = document.querySelector(".navigation");
+const navLinks = document.querySelectorAll(".nav-links");
 
 burgerMenu.addEventListener("click", () => {
   navigation.classList.toggle("active");
   burgerMenu.classList.toggle("active");
 });
 
-// const tl = gsap.timeline();
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    navigation.classList.remove("active");
+    burgerMenu.classList.remove("active");
+  });
+});
 
 let intro = document.querySelector(".intro");
 let logoSpan = document.querySelectorAll(".intro-logo");
-
-// window.addEventListener("DOMContentLoaded", () => {
-// setTimeout(() => {
-//   logoSpan.forEach((span, idx) => {
-//     setTimeout(() => {
-//       span.classList.add("active");
-//     }, (idx + 1) * 400);
-//   });
-//   setTimeout(() => {
-//     logoSpan.forEach((span, idx) => {
-//       setTimeout(() => {
-//         span.classList.remove("active");
-//         span.classList.add("fade");
-//       }, (idx + 1) * 50);
-//     });
-//   }, 2000);
-//   setTimeout(() => {
-//     intro.style.top = "-100vh";
-//   }, 2300);
-// });
 
 const tl = gsap.timeline();
 
@@ -104,15 +90,15 @@ tl.to(logoSpan, {
 
 tl.to(".about_left", {
   scrollTrigger: {
-    trigger: ".about-me",
+    trigger: "#about-me",
   },
-  x: -0,
+  x: 0,
   opacity: 1,
   delay: 1,
   duration: 1,
 }).to(".about_right", {
   scrollTrigger: {
-    trigger: ".about-me",
+    trigger: "#about-me",
   },
   x: 0,
   opacity: 1,
@@ -120,11 +106,11 @@ tl.to(".about_left", {
   duration: 1,
 });
 
-const skillsHeading = new SplitType(".skills .section-heading");
+const skillsHeading = new SplitType("#skills .section-heading");
 
-gsap.to(".skills .section-heading .word", {
+gsap.to("#skills .section-heading .word", {
   scrollTrigger: {
-    trigger: ".skills",
+    trigger: "#skills",
     start: "top 50%",
   },
   y: 0,
@@ -136,7 +122,7 @@ gsap.to(".skills .section-heading .word", {
 
 gsap.from(".tech-container", {
   scrollTrigger: {
-    trigger: ".skills",
+    trigger: "#skills",
     start: "top 50%",
   },
   y: 50,
@@ -147,11 +133,11 @@ gsap.from(".tech-container", {
   ease: "power2.out",
 });
 
-const experienceHeading = new SplitType(".experience .section-heading");
+const experienceHeading = new SplitType("#experience .section-heading");
 
-gsap.to(".experience .section-heading .word", {
+gsap.to("#experience .section-heading .word", {
   scrollTrigger: {
-    trigger: ".experience",
+    trigger: "#experience",
     start: "top 50%",
   },
   y: 0,
@@ -163,7 +149,7 @@ gsap.to(".experience .section-heading .word", {
 
 gsap.from(".main_exp_container", {
   scrollTrigger: {
-    trigger: ".experience",
+    trigger: "#experience",
     start: "top 50%",
   },
   opacity: 0,
@@ -172,6 +158,28 @@ gsap.from(".main_exp_container", {
 });
 
 // Achievements
+
+gsap.from(".achievements_heading", {
+  scrollTrigger: {
+    trigger: "#achievements",
+    start: "top 50%",
+  },
+  opacity: 1,
+  delay: 0.5,
+  duration: 1,
+});
+
+gsap.to(".award", {
+  scrollTrigger: {
+    trigger: "#achievements",
+    start: "top 50%",
+  },
+  x: 0,
+  opacity: 1,
+  stagger: 0.05,
+  delay: 0.5,
+  duration: 1,
+});
 
 const achievements_heading = document.getElementById("achievements_heading");
 const certificate = document.getElementById("cert_img");
@@ -200,3 +208,78 @@ achievements_container.addEventListener("mouseleave", () => {
   gsap.to(achievements_heading, { opacity: 1, duration: 0.3 });
   certificate.src = "";
 });
+
+// Projects
+
+const projectsSectionHeading = new SplitType("#projects .section-heading");
+
+gsap.to("#projects .section-heading .word", {
+  scrollTrigger: {
+    trigger: "#projects",
+    start: "top 50%",
+  },
+  y: 0,
+  opacity: 1,
+  stagger: 0.05,
+  delay: 0.5,
+  duration: 1,
+});
+
+gsap.to([".project_image_container", ".project_dis_container"], {
+  scrollTrigger: {
+    trigger: "#projects",
+  },
+  x: 0,
+  opacity: 1,
+  delay: 1,
+  duration: 1,
+});
+
+// Footer
+
+tl.to(".info h1", {
+  scrollTrigger: {
+    trigger: ".info",
+    start: "top 50%",
+  },
+  y: 0,
+  opacity: 1,
+  stagger: 0.05,
+  delay: 0.5,
+  duration: 1,
+})
+  .to([".contact_info", ".social"], {
+    opacity: 1,
+    delay: 0.5,
+    stagger: 0.05,
+    duration: 1,
+  })
+  .to(".form_container", {
+    scrollTrigger: {
+      trigger: ".form_container",
+      start: "top 50%",
+    },
+    opacity: 1,
+    stagger: 0.05,
+    delay: 0.5,
+    duration: 1,
+  })
+  .to(".credits", {
+    scrollTrigger: {
+      trigger: ".form_container",
+      start: "top 50%",
+    },
+    width: "100%",
+    delay: 0.5,
+    duration: 1,
+  })
+  .to(".copyright p ", {
+    scrollTrigger: {
+      trigger: ".form_container",
+      start: "top 50%",
+    },
+    display: "block",
+    opacity: 1,
+    delay: 0.5,
+    duration: 1,
+  });

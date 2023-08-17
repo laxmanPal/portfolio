@@ -28,7 +28,7 @@
       </h1>
     </div>
 
-    <section class="header-main">
+    <section id="main" class="header-main">
       <!-- Navigation -->
       <header class="header">
         <div class="header-container">
@@ -39,13 +39,18 @@
           </div>
           <nav class="navigation">
             <ul class="main-menu">
-              <li class="nav-items"><a href="#" class="nav-links">home</a></li>
               <li class="nav-items">
-                <a href="#" class="nav-links">project</a>
+                <a href="#main" class="nav-links">home</a>
               </li>
-              <li class="nav-items"><a href="#" class="nav-links">about</a></li>
               <li class="nav-items">
-                <a href="#" class="nav-links">contact</a>
+                <a href="#about-me" class="nav-links">about</a>
+              </li>
+              <li class="nav-items">
+                <a href="#projects" class="nav-links">project</a>
+              </li>
+
+              <li class="nav-items">
+                <a href="#footer" class="nav-links">contact</a>
               </li>
               <li class="nav-items header_btn">
                 <a
@@ -160,7 +165,7 @@
 
     <!-- About Me -->
 
-    <section class="about-me">
+    <section id="about-me">
       <div class="container">
         <div class="row about_content">
           <div class="about_left">
@@ -190,7 +195,7 @@
         </div>
       </div>
     </section>
-    <section class="skills">
+    <section id="skills">
       <img class="wave-top" src="images/wave.svg" alt="" />
       <div class="container">
         <h2 class="section-heading">
@@ -238,7 +243,7 @@
       </div>
       <img class="wave-bottom" src="images/wave.svg" alt="" />
     </section>
-    <section class="experience">
+    <section id="experience">
       <div class="container">
         <h2 class="section-heading">
           Professional Work Experience <br />
@@ -273,7 +278,7 @@
         </div>
       </div>
     </section>
-    <section class="achievements">
+    <section id="achievements">
       <div class="container">
         <div class="achievements_wrapper">
           <div class="certificate_container">
@@ -285,7 +290,9 @@
               <li data-image="images/cert/udemy_webdev.jpg">
                 <a
                   href="https://www.udemy.com/certificate/UC-6da0fe80-f003-46e5-a570-431c85b8e4f2/"
-                  ><h3>The Complete 2022 Web Development Bootcamp</h3></a
+                  ><h3 class="award">
+                    The Complete 2022 Web Development Bootcamp
+                  </h3></a
                 >
 
                 <p>Udemy</p>
@@ -294,7 +301,7 @@
                 <a
                   href="https://www.udemy.com/certificate/UC-2362e4c3-a7bb-4131-9304-46889b40222a/"
                 >
-                  <h3>
+                  <h3 class="award">
                     NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno)
                   </h3></a
                 >
@@ -305,7 +312,9 @@
                 <a
                   href="https://www.coursera.org/account/accomplishments/verify/GR7C7ZMFRUYL"
                 >
-                  <h3>Introduction to Front-End Development</h3></a
+                  <h3 class="award">
+                    Introduction to Front-End Development
+                  </h3></a
                 >
 
                 <p>Coursera</p>
@@ -313,7 +322,9 @@
               <li data-image="images/cert/coursera_node.png">
                 <a
                   href="https://www.coursera.org/account/accomplishments/verify/2Y5KW9QG67DN"
-                  ><h3>Developing Back-End Apps with Node.js and Express</h3></a
+                  ><h3 class="award">
+                    Developing Back-End Apps with Node.js and Express
+                  </h3></a
                 >
 
                 <p>Coursera</p>
@@ -323,7 +334,7 @@
         </div>
       </div>
     </section>
-    <section class="projects">
+    <section id="projects">
       <div class="container">
         <h2 class="section-heading">
           Crafting Digital Dreams: <br />
@@ -422,7 +433,7 @@
         </div>
       </div>
     </section>
-    <section class="footer">
+    <section id="footer">
       <img class="curve" src="images/top-elipse.svg" alt="" />
       <footer>
         <div class="container">
