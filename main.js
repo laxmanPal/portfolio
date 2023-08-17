@@ -28,99 +28,147 @@ burgerMenu.addEventListener("click", () => {
   burgerMenu.classList.toggle("active");
 });
 
-// let text = document.querySelector(".preloader-text p");
-
-// text.innerHTML = text.innerHTML
-//   .split("")
-//   .map((char, i) => {
-//     return `<span style="transform:rotate(${i * 9}deg)">${char}</span>`;
-//   })
-//   .join("");
+// const tl = gsap.timeline();
 
 let intro = document.querySelector(".intro");
-let logo = document.querySelector(".logo-header");
 let logoSpan = document.querySelectorAll(".intro-logo");
 
-window.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    logoSpan.forEach((span, idx) => {
-      setTimeout(() => {
-        span.classList.add("active");
-      }, (idx + 1) * 400);
-    });
-    setTimeout(() => {
-      logoSpan.forEach((span, idx) => {
-        setTimeout(() => {
-          span.classList.remove("active");
-          span.classList.add("fade");
-        }, (idx + 1) * 50);
-      });
-    }, 2000);
-    setTimeout(() => {
-      intro.style.top = "-100vh";
-    }, 2300);
+// window.addEventListener("DOMContentLoaded", () => {
+// setTimeout(() => {
+//   logoSpan.forEach((span, idx) => {
+//     setTimeout(() => {
+//       span.classList.add("active");
+//     }, (idx + 1) * 400);
+//   });
+//   setTimeout(() => {
+//     logoSpan.forEach((span, idx) => {
+//       setTimeout(() => {
+//         span.classList.remove("active");
+//         span.classList.add("fade");
+//       }, (idx + 1) * 50);
+//     });
+//   }, 2000);
+//   setTimeout(() => {
+//     intro.style.top = "-100vh";
+//   }, 2300);
+// });
+
+const tl = gsap.timeline();
+
+tl.to(logoSpan, {
+  bottom: 0,
+  opacity: 1,
+  stagger: 0.5,
+  delay: 0.5,
+  duration: 0.5,
+})
+  .to(logoSpan, {
+    bottom: "50px",
+    opacity: 0,
+    stagger: 0.5,
+    delay: 0.1,
+    duration: 0.5,
+  })
+  .to(intro, {
+    y: "-100vh",
+    delay: 0.5,
+    duration: 1,
+  })
+  .to(".header-logo_wrapper", {
+    y: 0,
+    opacity: 1,
+    delay: 0.1,
+    duration: 0.3,
+  })
+  .to(".nav-items", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.1,
+    delay: 0.1,
+    duration: 0.3,
+  })
+  .to(".text-slider", {
+    y: 0,
+    opacity: 1,
+    stagger: 0.05,
+    delay: 0.5,
+    duration: 1,
+  })
+  .to(".heading-huge", {
+    y: 0,
+    stagger: 0.05,
+    delay: -1,
+    duration: 1,
   });
-});
-
-gsap.to(".clip-path", {
-  scrollTrigger: {
-    trigger: ".clip-path-wrapper",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-    pin: true,
-  },
-  clipPath: "circle(100% at center center)",
-  ease: "power2.out",
-});
-
-gsap.to(".innertext", {
-  scrollTrigger: {
-    trigger: ".clip-path-wrapper",
-    start: "top top",
-    end: "bottom top",
-    scrub: true,
-  },
-  opacity: 0,
-  ease: "power2.out",
-});
-
-// gsap.from(".internet_img", {
-//   scrollTrigger: {
-//     trigger: ".skills",
-//     start: "top 20%",
-//   },
-//   scale: 0,
-//   opacity: 0,
-//   delay: 0.5,
-//   duration: 1,
-//   ease: "power2.out",
 // });
 
-// gsap.from(".frontend , .databases , .others , .backend", {
-//   scrollTrigger: {
-//     trigger: ".skills",
-//     start: "top 20%",
-//   },
-//   scale: 0,
-//   opacity: 0,
-//   delay: 1,
-//   duration: 1,
-//   stagger: 0.09,
-//   ease: "power2.out",
-// });
+tl.to(".about_left", {
+  scrollTrigger: {
+    trigger: ".about-me",
+  },
+  x: -0,
+  opacity: 1,
+  delay: 1,
+  duration: 1,
+}).to(".about_right", {
+  scrollTrigger: {
+    trigger: ".about-me",
+  },
+  x: 0,
+  opacity: 1,
+  delay: 1,
+  duration: 1,
+});
+
+const skillsHeading = new SplitType(".skills .section-heading");
+
+gsap.to(".skills .section-heading .word", {
+  scrollTrigger: {
+    trigger: ".skills",
+    start: "top 50%",
+  },
+  y: 0,
+  opacity: 1,
+  stagger: 0.05,
+  delay: 0.5,
+  duration: 1,
+});
 
 gsap.from(".tech-container", {
   scrollTrigger: {
     trigger: ".skills",
     start: "top 50%",
   },
-  scale: 0,
+  y: 50,
   opacity: 0,
   delay: 1,
   duration: 1,
   stagger: 0.09,
   ease: "power2.out",
+});
+
+const experienceHeading = new SplitType(".experience .section-heading");
+
+gsap.to(".experience .section-heading .word", {
+  scrollTrigger: {
+    trigger: ".experience",
+    start: "top 50%",
+  },
+  y: 0,
+  opacity: 1,
+  stagger: 0.05,
+  delay: 0.5,
+  duration: 1,
+});
+
+gsap.from(".main_exp_container", {
+  scrollTrigger: {
+    trigger: ".experience",
+    start: "top 50%",
+  },
+  opacity: 0,
+  delay: 1,
+  duration: 1,
 });
 
 // Achievements
