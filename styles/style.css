@@ -668,7 +668,7 @@ img {
 }
 
 .skills .wave-top {
-  bottom: 100%;
+  bottom: 99%;
 }
 
 .skills .wave-bottom {
@@ -865,15 +865,18 @@ img {
 }
 
 .exp_container {
-  padding: 2em 0;
+  width: 95%;
+  max-width: 1170px;
+  margin: 0 auto;
   position: relative;
+  padding: 2em 0;
 }
 
 .exp_container:before {
   content: "";
   position: absolute;
   top: 0;
-  left: 50%;
+  left: 18px;
   margin-left: -2px;
   height: 100%;
   width: 4px;
@@ -885,17 +888,21 @@ img {
 }
 
 .vertical-timeline-element {
-  margin: 0 4em 4em 4em;
+  margin: 2em 0;
   position: relative;
+}
+
+.vertical-timeline-element:first-child {
+  margin-top: 0;
 }
 
 .vertical-timeline-element-icon {
   position: absolute;
   top: 0;
-  width: 60px;
-  height: 60px;
-  left: 50%;
-  margin-left: -30px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  /* margin-left: -30px; */
   border-radius: 50%;
   background: rgb(51, 51, 51);
   box-shadow: 0 0 0 4px #afafafd2, inset 0 2px #00000014, 0 3px 0 4px #0000000d;
@@ -910,15 +917,14 @@ img {
 }
 
 .company-icon {
-  width: 40px;
-  height: 40px;
+  width: 60%;
+  height: 60%;
   object-fit: contain;
 }
 
 .vertical-timeline-element-content {
-  margin-left: 0;
+  margin-left: 60px;
   padding: 1.5em;
-  width: 44%;
   background: rgb(234, 234, 236);
   color: rgb(41, 41, 41);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
@@ -931,13 +937,11 @@ img {
   content: "";
   position: absolute;
   top: 24px;
-  left: 100%;
   right: 100%;
   height: 0;
   width: 0;
   border: 7px solid transparent;
   border-right: 7px solid rgb(35, 38, 49);
-  transform: rotate(180deg);
 }
 
 .vertical-timeline-element-content h3 {
@@ -959,12 +963,7 @@ img {
 }
 
 .vertical-timeline-element-date {
-  position: absolute;
-  width: 100%;
-  left: 124%;
-  top: 6px;
   font-size: 1rem;
-  float: left;
   padding: 0.8em 0;
   opacity: 0.7;
 }
@@ -987,6 +986,7 @@ img {
 
 .achievements_wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .certificate_container {
@@ -1050,7 +1050,7 @@ img {
 .projects .container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 130px 0;
+  padding: 100px 0;
 }
 
 .projects .section-heading {
@@ -1067,6 +1067,7 @@ img {
 
 .project_container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 4rem;
 }
@@ -1120,6 +1121,7 @@ footer .container {
 
 footer .content {
   display: flex;
+  flex-wrap: wrap;
   padding: 4rem 0;
 }
 
@@ -1241,20 +1243,47 @@ footer .info h1 {
 
 /* Responsive */
 
-@media (max-width: 575px) {
-  .preloader-container > h1 {
-    font-size: 3rem;
+@media only screen and (min-width: 1170px) {
+  .exp_container:before {
+    left: 50%;
+    margin-left: -2px;
   }
 
-  .header {
-    padding: 1rem 0;
-    height: 100px;
+  .vertical-timeline-element-date {
+    position: absolute;
+    width: 100%;
+    left: 124%;
+    top: 6px;
+    float: left;
   }
 
-  .header-container {
-    padding: 0 1.2rem;
+  .vertical-timeline-element-icon {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    margin-left: -30px;
   }
 
+  .vertical-timeline-element-content {
+    margin-left: 0;
+    padding: 1.5em;
+    width: 44%;
+  }
+
+  .vertical-timeline-element-content-arrow {
+    top: 24px;
+    left: 100%;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  /* width: 44%;
+  
+  
+  */
+}
+
+@media (max-width: 799px) {
   .navigation {
     position: absolute;
     top: 0;
@@ -1295,13 +1324,12 @@ footer .info h1 {
     background: #000;
     color: #fff;
     width: 100%;
-    margin-top: auto;
     display: inline-flex;
     justify-content: center;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4rem;
     transition: all 0.5s ease;
-    padding: 1.2rem 2rem;
+    padding: 0.5rem 2rem;
   }
 
   .burger-menu {
@@ -1332,6 +1360,62 @@ footer .info h1 {
   .burger-menu.active div:nth-child(2) {
     transform: translate3d(0px, -6px, 0px) scale3d(1, 1, 1) rotateX(0deg)
       rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg);
+  }
+
+  .heading-huge {
+    font-size: 5rem;
+  }
+
+  .about_left,
+  .about_right {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .main-tech-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .certificate_container,
+  .achievements_container {
+    width: 100%;
+  }
+
+  .certificate_container {
+    margin-bottom: 5rem;
+  }
+
+  .project_image_container,
+  .project_dis_container {
+    width: 100%;
+  }
+
+  footer .info,
+  footer .form_container {
+    width: 100%;
+  }
+
+  .intro-logo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .intro-logo {
+    font-size: 1rem;
+  }
+
+  .header {
+    padding: 1rem 0;
+    height: 100px;
+  }
+
+  .header-container {
+    padding: 0 1.2rem;
+  }
+
+  .main-menu {
+    padding: 0 5rem;
   }
 
   .logo {
@@ -1397,11 +1481,6 @@ footer .info h1 {
   .about-title h2 {
     font-size: 33px;
   }
-  .about_left,
-  .about_right {
-    width: 100%;
-    padding: 0 1rem;
-  }
 
   .about_left img,
   .about_right img {
@@ -1449,32 +1528,74 @@ footer .info h1 {
     font-size: 2rem;
   }
 
-  .stop {
-    margin: 10px 0;
+  .vertical-timeline-element-content h3 {
+    font-size: 19px;
   }
 
-  .stop svg {
-    width: 30px;
-  }
-
-  .first_exp {
-    top: 90px;
-  }
-
-  .designation {
-    font-size: 1.5rem;
-  }
-
-  .org_name {
+  .vertical-timeline-element-content p {
     font-size: 1rem;
-    color: #555;
   }
 
-  .exp_duration {
+  .vertical-timeline-element-date h3 {
     font-size: 12px;
   }
 
-  .second_exp {
-    top: 295px;
+  .experience .container {
+    padding: 0 0 50px 0;
+  }
+
+  .certificate_container h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .achievements_container li {
+    padding: 1rem 0 1rem 0;
+  }
+
+  .achievements_container li h3 {
+    font-size: 1rem;
+  }
+
+  .projects .section-heading {
+    font-size: 2rem;
+  }
+
+  .projects_container {
+    padding: 50px 0;
+  }
+
+  .project_image_container img {
+    border-radius: 10px;
+  }
+
+  .projects .container {
+    padding: 100px 0 0 0;
+  }
+
+  .info .circle {
+    width: 250px;
+    top: -3rem;
+    left: 0rem;
+  }
+
+  footer .info h1 {
+    font-size: 3rem;
+  }
+
+  .contact_details h6 {
+    font-size: 1rem;
+  }
+
+  .contact_info a {
+    font-size: 13px;
+  }
+
+  .social a {
+    font-size: 1.5rem;
+  }
+
+  .copyright p {
+    font-size: 10px;
   }
 }
