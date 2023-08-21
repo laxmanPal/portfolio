@@ -294,7 +294,7 @@ img {
 }
 
 .text-slider {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   border-top: 1px solid #000000;
   border-bottom: 1px solid #000000;
   overflow: hidden;
@@ -315,7 +315,7 @@ img {
 }
 
 .slider-text {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 0 20px;
   white-space: nowrap;
   color: #000;
@@ -411,7 +411,7 @@ img {
 }
 
 .heading-huge {
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-transform: uppercase;
   transform: translateY(1130px);
 }
