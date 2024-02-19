@@ -1105,6 +1105,8 @@ footer .info h1 {
     margin-top: 10px;
     z-index: 9;
     display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   .burger-menu div {
@@ -1236,16 +1238,16 @@ footer .info h1 {
 
   .profile_img_container {
     padding-bottom: 2rem;
-}
+  }
 
-.rec {
-  width: 220px;
-  height: 270px;
-}
+  .rec {
+    width: 220px;
+    height: 270px;
+  }
 
-.profile_img_container img {
-  width: 200px;
-}
+  .profile_img_container img {
+    width: 200px;
+  }
 
   #skills {
     height: 100%;

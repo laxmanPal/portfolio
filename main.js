@@ -66,6 +66,12 @@ tl.to(logoSpan, {
     delay: 0.1,
     duration: 0.3,
   })
+  .to(".burger-menu", {
+    y: 0,
+    opacity: 1,
+    delay: 0.1,
+    duration: 0.3,
+  })
   .to(".nav-items", {
     y: 0,
     opacity: 1,
